@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 672784860}
   - component: {fileID: 672784862}
   - component: {fileID: 672784863}
+  - component: {fileID: 672784864}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -584,6 +585,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.1731487, y: -0.04328847}
   m_Size: {x: 4.8723583, y: 5.4783826}
   m_Direction: 0
+--- !u!114 &672784864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672784857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94ea6f065d4ac548ac6c003ec17ebde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689136375
 GameObject:
   m_ObjectHideFlags: 0
