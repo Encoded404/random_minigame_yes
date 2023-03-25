@@ -32,10 +32,6 @@ public class Main_Network_Script
             return false;
         }
     }
-    void listen()
-    {
-        
-    }
 }
 
 public static class bitwiseOperations
