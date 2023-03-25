@@ -7,8 +7,7 @@ public class RandomShootScript : MonoBehaviour
     public float fireRate = 1f;
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
-
-
+    public bool friendly;
 
     private float nextFireTime = 0f;
 
@@ -27,11 +26,17 @@ public class RandomShootScript : MonoBehaviour
 
     void Fire()
     {
+
         // Spawn a bullet prefab and set its position to the bullet spawn point
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
 
         // Set the bullet's velocity to move straight up
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.velocity = Vector3.up * -10f;
+        if(friendly)
+            bulletRb.velocity = Vector3.up * 10f;
+        else
+            bulletRb.velocity = Vector3.up * -10f;
+
+
     }
 }
