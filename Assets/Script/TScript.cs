@@ -9,7 +9,7 @@ public class TScript : MonoBehaviour
     public TMP_InputField input;
     public TMP_Text text;
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
         input.Select();
         input.ActivateInputField();
