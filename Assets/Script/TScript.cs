@@ -33,9 +33,6 @@ public class TScript : MonoBehaviour
         input.ActivateInputField();
 
     }
-    void UpdateScreen(string lines) {
-        
-    }
 
     public void onEndEdit() {
         // Return if enter is not pressed
@@ -45,7 +42,7 @@ public class TScript : MonoBehaviour
         string whole_command = input.text;
         string command = whole_command.Split(" ")[0];
         string[] arguments = whole_command.Split(" ")[1..];
-        
+
         // Prepare for command
         text.text +=  whole_command + "\n";
         input.text = "";
@@ -65,6 +62,10 @@ public class TScript : MonoBehaviour
 
     public void print(string message) {
         text.text += message;
+    }
+
+    public void clear() {
+        text.text = "user@localhost:$ ";
     }
 
     public void handleCommand(string command, string[] arguments) {
