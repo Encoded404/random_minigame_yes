@@ -7,6 +7,7 @@ public class TScript : MonoBehaviour
 {
     private List<string> lines;
     public TMP_InputField input;
+    public TMP_Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,12 @@ public class TScript : MonoBehaviour
     }
     void UpdateScreen(string lines) {
         
+    }
+
+    public void onEndEdit() {
+        if (!Input.GetKey(KeyCode.Return)) return;
+        text.text += input.text;
+        text.text += "\nuser@localhost:$ ";
+        input.text = "";
     }
 }
