@@ -402,6 +402,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587274697}
+  - component: {fileID: 587274698}
+  - component: {fileID: 587274699}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -432,6 +434,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 780, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &587274698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587274696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d515aba9f5da4144190bdb3f97171d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playername: playername
+  input: {fileID: 1832224734}
+  text: {fileID: 431665135}
+--- !u!114 &587274699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587274696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77fd77ed3f1719e881c20d163dc128e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terminal: {fileID: 587274698}
 --- !u!1 &805128957
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +859,6 @@ GameObject:
   - component: {fileID: 1832224733}
   - component: {fileID: 1832224736}
   - component: {fileID: 1832224734}
-  - component: {fileID: 1832224737}
   m_Layer: 5
   m_Name: TerminalInput
   m_TagString: Untagged
@@ -920,7 +949,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1832224737}
+      - m_Target: {fileID: 587274698}
         m_TargetAssemblyTypeName: TScript, Assembly-CSharp
         m_MethodName: onEndEdit
         m_Mode: 1
@@ -976,20 +1005,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832224732}
   m_CullTransparentMesh: 1
---- !u!114 &1832224737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832224732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d515aba9f5da4144190bdb3f97171d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: {fileID: 1832224734}
-  text: {fileID: 431665135}
 --- !u!1 &1992894306
 GameObject:
   m_ObjectHideFlags: 0
