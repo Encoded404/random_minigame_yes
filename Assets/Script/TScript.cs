@@ -7,6 +7,8 @@ using System;
 public class TScript : MonoBehaviour
 {
     private List<string> lines;
+
+    public string playername = "playername";
     public TMP_InputField input;
     public TMP_Text text;
     public Dictionary<string, Action<TMP_Text, string[]>> commands = new Dictionary<string, Action<TMP_Text, string[]>>();
@@ -24,6 +26,12 @@ public class TScript : MonoBehaviour
         commands["echo"] = (terminal, arguments) => {
             println(String.Join(" ", arguments));
         };
+
+        commands["say"] = (terminal, arguments) => {
+            println(playername + " >> " + String.Join(" ", arguments));
+        };
+
+        
     }
 
     // Update is called once per frame
