@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
         
-public class TerminalScript : MonoBehaviour
+public class TScript : MonoBehaviour
 {
     private List<string> lines;
     public TMP_InputField input;
@@ -21,7 +21,7 @@ public class TerminalScript : MonoBehaviour
         input.ActivateInputField();
 
     }
-    void UpdateScreen(lines) {
+    void UpdateScreen(string lines) {
         
     }
 }
