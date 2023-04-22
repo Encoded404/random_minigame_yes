@@ -190,8 +190,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278910720
-  m_fontColor: {r: 0, g: 1, b: 0.0408051, a: 1}
+    rgba: 4279616768
+  m_fontColor: {r: 0, g: 0.7735849, b: 0.08122422, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: -20
-  m_lineSpacing: 0
+  m_lineSpacing: 10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -325,8 +325,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278910720
-  m_fontColor: {r: 0, g: 1, b: 0.0408051, a: 1}
+    rgba: 4279616768
+  m_fontColor: {r: 0, g: 0.77254903, b: 0.08235294, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -955,7 +955,7 @@ MonoBehaviour:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0, g: 0.8490566, b: 0.032753516, a: 0.7529412}
+  m_SelectionColor: {r: 0, g: 0.77254903, b: 0.08235294, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.83
   m_CaretWidth: 5
