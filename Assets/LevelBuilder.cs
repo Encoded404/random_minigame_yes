@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthScript : MonoBehaviour
+public class LevelBuilder : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,12 +14,5 @@ public class EnemyHealthScript : MonoBehaviour
     void Update()
     {
         
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
-        }
     }
 }
