@@ -221,6 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  bulletPrefab: {fileID: 1272226130594598524, guid: 6bfa284a6aa2a6d4c9431931e2050613, type: 3}
+  bulletPrefab: {fileID: 1272226130594598524, guid: 6b2cd750d4da5344b8076f2a4cd645b1, type: 3}
   bulletSpawnPoint: {fileID: 2248999495413421825}
   friendly: 0

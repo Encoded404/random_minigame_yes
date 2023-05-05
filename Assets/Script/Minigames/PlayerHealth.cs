@@ -71,7 +71,7 @@ public class PlayerHealth : MonoBehaviour
     {
 
      
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             TakeDamage(1);
         }

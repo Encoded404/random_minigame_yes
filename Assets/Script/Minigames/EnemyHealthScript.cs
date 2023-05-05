@@ -15,7 +15,7 @@ public class EnemyHealthScript : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollsionEnter2D(Collider2D collision)
     {
         if (gameObject.CompareTag("Bullet"))
         {
