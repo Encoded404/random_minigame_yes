@@ -35,7 +35,7 @@ public class RandomShootScript : MonoBehaviour
         if(friendly)
             bulletRb.velocity = Vector2.up * 10f;
         else
-            bulletRb.velocity = Vector2.up * -10f;
+            bulletRb.velocity = Vector2.up * -10f;  
 
 
     }
