@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealthScript : MonoBehaviour
 {
+
+    public bool friendly = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,11 @@ public class EnemyHealthScript : MonoBehaviour
         print("EnTookDmg");
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            if (friendly)
+                ScoreManager.AddToRedTeamScore(1);
+            else
+                ScoreManager.AddToGreenTeamScore(1);
+            
             Destroy(gameObject);
         }
     }

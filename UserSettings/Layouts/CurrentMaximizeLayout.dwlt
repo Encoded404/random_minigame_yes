@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 22569
+  controlID: 29825
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 22570
+  controlID: 29773
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22571
+  controlID: 29722
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,7 +228,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c803feffe4ebffff80f0ffff30fbffff7e580000485c00006e5c0000c48d0000
+      m_ExpandedIDs: 56a9fdffeeacfdff4ec7fdffdec7fdff0ac9fdff4ac9fdff50cffdffc2d3fdffc803feffe4ebffff80f0ffff30fbffff7e580000485c00006e5c0000c48d00003ea2000054a8000074a80000b2a80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -560,9 +560,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.43022692, y: -0.88140726, z: -0.05622297}
+    m_Target: {x: 0.21134523, y: -0.09213509, z: -0.090512425}
     speed: 2
-    m_Value: {x: -0.43022692, y: -0.88140726, z: -0.05622297}
+    m_Value: {x: 0.21134523, y: -0.09213509, z: -0.090512425}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.5243726
+    m_Target: 7.9533253
     speed: 2
-    m_Value: 4.5243726
+    m_Value: 7.9533253
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -709,22 +709,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/2DAssets/SpaceshipGame
+    - Assets/Scenes/mini games/SpaceInvaders
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/2DAssets/SpaceshipGame
+  - Assets/Scenes/mini games/SpaceInvaders
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\johan\OneDrive\Dokumenter\GitHub\random_minigame_yes
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c45c0000
-    m_LastClickedID: 23748
-    m_ExpandedIDs: 000000001a5900002059000000ca9a3bffffff7f
+    m_SelectedIDs: 54590000
+    m_LastClickedID: 22868
+    m_ExpandedIDs: 000000001a5900002a5900005659000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -777,8 +777,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f85a0000
-    m_LastClickedInstanceID: 23288
+    m_SelectedInstanceIDs: 58590000
+    m_LastClickedInstanceID: 22872
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a6790000707b0000
     m_RenameOverlay:
@@ -898,7 +898,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 23288
+  m_LastInspectedObjectInstanceID: 22872
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
