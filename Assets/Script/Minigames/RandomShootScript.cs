@@ -14,7 +14,7 @@ public class RandomShootScript : MonoBehaviour
     void Update()
     {
         
-
+        
         // Fire a bullet if the player presses the fire button and enough time has elapsed since the last shot
         if ( Time.time >= nextFireTime)
         {
@@ -31,11 +31,11 @@ public class RandomShootScript : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
 
         // Set the bullet's velocity to move straight up
-        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         if(friendly)
-            bulletRb.velocity = Vector3.up * 10f;
+            bulletRb.velocity = Vector2.up * 10f;
         else
-            bulletRb.velocity = Vector3.up * -10f;
+            bulletRb.velocity = Vector2.up * -10f;
 
 
     }

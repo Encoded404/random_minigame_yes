@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float currentHealth { get; private set; }
     private Animator anim;
-    private bool dead;
+    private bool    dead;
    // public Text Score;
 
 
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float _damage)
     {
 
-
+        print("PlayerTookDamage");
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
       //  soundEffectPlayer.Play();
 
