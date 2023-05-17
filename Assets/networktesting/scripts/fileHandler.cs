@@ -19,7 +19,7 @@ public class fileHandler : MonoBehaviour
     {
         gameLocation = Application.streamingAssetsPath;
         mainProblemHandler.Debuger.MakePublicDebug("game path is: " + gameLocation, "fileHandler");
-        writeToDisk("lol", "lol");
+        writeToDisk("lol", "txt", "lol");
     }
 
     /// <summary>
@@ -64,6 +64,33 @@ public class fileHandler : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// writes at file with the specefied <paramref name="filename"/> and the extension ".txt" with the <paramref name="content"/> inside.
+    /// 
+    /// returns true if succesfull and false if it fails
+    /// </summary>
+    /// <param name="filename"></param>
+    /// <param name="content"></param>
+    /// <returns></returns>
+    public bool writeToDisk(string filename, string content)
+    {
+        try
+        {
+            Directory.CreateDirectory(gameLocation);
+            mainProblemHandler.Debuger.MakePublicDebug("writing a file to disk: " + filename, "fileHandler");
+            streamWriter = new StreamWriter(gameLocation + @"/" + filename + ".txt");
+            streamWriter.Write(content);
+            streamWriter.Dispose();
+        }
+        catch (System.Exception e)
+        {
+            mainProblemHandler.Debuger.MakePublicDebug("encountered an error while writing to disc: " + e, "fileHandler");
+            return false;
+        }
+        return true;
+    }
+
     /// <summary>
     /// writes at file with the specefied <paramref name="filename"/> and the <paramref name="extension"/> with the <paramref name="content"/> inside.
     /// 
@@ -79,7 +106,7 @@ public class fileHandler : MonoBehaviour
         {
             Directory.CreateDirectory(gameLocation);
             mainProblemHandler.Debuger.MakePublicDebug("writing a file to disk: " + filename,"fileHandler");
-            streamWriter = new StreamWriter(gameLocation+@"/"+filename+".txt");
+            streamWriter = new StreamWriter(gameLocation+@"/"+filename+"."+extension);
             streamWriter.Write(content);
             streamWriter.Dispose();
         }

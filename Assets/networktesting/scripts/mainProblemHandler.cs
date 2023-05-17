@@ -48,6 +48,6 @@ public class mainProblemHandler : MonoBehaviour
         debugStringList.Append("the Application has run in to an exeption and will terminate. current running time is: "+Time.realtimeSinceStartup+" seconds");
         debugStringList.Append(sender.ToString()+" made and exception with the following args: "+args.ToString());
         Debug.Log(debugStringList.ToString());
-        fileHandler.localFileHandler.writeToDisk("ApplicationCrash-"+DateTime.Now, debugStringList.ToString());
+        fileHandler.localFileHandler.writeToDisk("ApplicationCrash-"+DateTime.Now, "txt", debugStringList.ToString());
     }
 }
