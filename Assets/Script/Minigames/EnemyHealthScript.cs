@@ -19,8 +19,9 @@ public class EnemyHealthScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         print("EnTookDmg");
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet")&& !friendly) 
         {
             if (friendly)
                 ScoreManager.AddToRedTeamScore(1);
@@ -29,5 +30,11 @@ public class EnemyHealthScript : MonoBehaviour
             
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("EnemyBullet") && friendly)
+        {
+            ScoreManager.AddToRedTeamScore(1);
+            Destroy(gameObject);
+        }
+
     }
 }
