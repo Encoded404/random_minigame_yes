@@ -17,6 +17,12 @@ public class deepNetworkManager
     Thread receiveThread;
     bool isReceiving;
 
+    public event EventHandler<object> receivedRandomData;
+    public event EventHandler<string> receivedStringData;
+    public event EventHandler<int> receivedIntData;
+    public event EventHandler<double> receivedDoubleData;
+    public event EventHandler<object> receivedRandomStructData;
+
     public void Awake()
     {
         DNW = this;
