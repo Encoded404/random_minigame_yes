@@ -1,43 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using System.Net;
-using System.Net.Sockets;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Threading;
+//using System.Net;
+//using System.Net.Sockets;
 
-public class Main_Network_Script
-{
-    Socket s1 = new Socket(SocketType.Stream, ProtocolType.Tcp);
-    public bool ConnectToServer(int ip,int port)
-    {
-        try
-        {
-            IPEndPoint ipend = new IPEndPoint(ip,port);
-            s1.Connect(ipend);
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-    public bool SendToServer(byte[] data)
-    {
-        try
-        {
-            s1.Send(data);
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-    void listen()
-    {
+//public class Main_Network_Script
+//{
+//    Socket s1 = new Socket(SocketType.Stream, ProtocolType.Tcp);
+//    public bool ConnectToServer(int ip,int port)
+//    {
+//        try
+//        {
+//            IPEndPoint ipend = new IPEndPoint(ip,port);
+//            s1.Connect(ipend);
+//            return true;
+//        }
+//        catch
+//        {
+//            return false;
+//        }
+//    }
+//    public bool SendToServer(byte[] data)
+//    {
+//        try
+//        {
+//            s1.Send(data);
+//            return true;
+//        }
+//        catch
+//        {
+//            return false;
+//        }
+//    }
+//    void listen()
+//    {
 
-        //s1.Receive()
-    }
-}
+//        //s1.Receive()
+//    }
+//}
 
 //public static class bitwiseOperations
 //{

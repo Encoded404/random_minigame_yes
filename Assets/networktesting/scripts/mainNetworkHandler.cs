@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,31 +12,76 @@ public class mainNetworkHandler : MonoBehaviour
     List<int> intQueue = new List<int>();
     List<double> doubleQueue = new List<double>();
     List<object> abstractQueue = new List<object>();
-    List<dataStruct> structQueue = new List<dataStruct>();
+    List<object> structQueue = new List<object>();
 
-    void sendString(string data)
+    public event EventHandler<string> recievedAnyRawData;
+    void recievedAnyRawDataFunktion(string rawData) recievedAnyRawData(rawData);
+
+
+    public event EventHandler<object> recievedAnyData;
+    void recievedAnyDataFunktion(object data) recievedAnyData(data);
+
+
+    public event EventHandler<object> receivedRandomData;
+    void recievedRandomDataFunktion(object data) recievedRandomData(data);
+
+    public event EventHandler<object> receivedRandomStruct;
+    void recievedRandomStructFunktion(object structData) recievedAnyRawData(structData);
+
+
+    public event EventHandler<string> receivedString;
+    void recievedStringFunktion(string stringData) recievedAnyRawData(stringData);
+
+    public event EventHandler<int> receivedInt;
+    void recievedIntFunktion(int intData) recievedInt(intData);
+
+    public event EventHandler<double> receivedDouble;
+    void recievedDoubleFunktion(double doubleData) recievedDouble(doubleData);
+
+
+    /// <summary>
+    /// sends a string to the server
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendString(string data)
     {
         stringQueue.Add(data);
     }
 
-    void sendInt(int data)
+    /// <summary>
+    /// sends a int to the server
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendInt(int data)
     {
         intQueue.Add(data);
     }
 
-    void sendDouble(double data)
+    /// <summary>
+    /// sends a double to the server. an implesit conversion exist from int and float to double so they can be inputed instead
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendDouble(double data)
     {
         doubleQueue.Add(data);
     }
 
-    void sendAbstract(object data)
+    /// <summary>
+    /// sends a object to the server and directly to all clients. using the data you need to handle youself on this one. REMEMBER the data needs to be serelizable by newtonsoft.json
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendAbstract(object dataObject)
     {
-        abstractQueue.Add(data);
+        abstractQueue.Add(dataObject);
     }
 
-    void sendAbstractStruct(dataStruct data)
+    /// <summary>
+    /// sends a struct to the server and directly to all clients. using the data you need to handle youself on this one. REMEMBER the data inside the struct needs to be serelizable by newtonsoft.json 
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendAbstractStruct(object dataStruct)
     {
-        structQueue.Add(data);
+        structQueue.Add(dataStruct);
     }
 
     void Awake()
@@ -46,6 +92,14 @@ public class mainNetworkHandler : MonoBehaviour
     void Start()
     {
         DeepNetworkManagerInstance.Main();
+        DeepNetworkManagerInstance.recievedAnyRawData += recievedAnyRawDataFunktion;
+        DeepNetworkManagerInstance.recievedAnyData += recievedAnyDataFunktion;
+        DeepNetworkManagerInstance.recievedRandomData += recievedRandomDataFunktion;
+        DeepNetworkManagerInstance.recievedStringData += recievedStringFunktion;
+        DeepNetworkManagerInstance.recievedIntData += recievedIntFunktion;
+        DeepNetworkManagerInstance.recievedDoubleData += recievedDoubleFunktion;
+
+
     }
 
     void Update()
