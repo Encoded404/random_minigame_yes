@@ -14,27 +14,47 @@ public class mainNetworkHandler : MonoBehaviour
     List<object> abstractQueue = new List<object>();
     List<object> structQueue = new List<object>();
 
+    /// <summary>
+    /// this is called when the client recieves any data at all. all data is raw so no fancy things for you this time
+    /// </summary>
     public event EventHandler<string> recievedAnyRawData;
     void recievedAnyRawDataFunktion(string rawData) recievedAnyRawData(rawData);
 
-
+    /// <summary>
+    /// this is called when it recieves a Object, Struct, Int, Double or String
+    /// </summary>
     public event EventHandler<object> recievedAnyData;
     void recievedAnyDataFunktion(object data) recievedAnyData(data);
 
 
+    /// <summary>
+    /// this is called when the client recieves data send by a SendAbstact() call
+    /// </summary>
     public event EventHandler<object> receivedRandomData;
     void recievedRandomDataFunktion(object data) recievedRandomData(data);
 
+    /// <summary>
+    /// this is called when the client recieves data send by a SendAbstractStruct() call
+    /// </summary>
     public event EventHandler<object> receivedRandomStruct;
     void recievedRandomStructFunktion(object structData) recievedAnyRawData(structData);
 
 
+    /// <summary>
+    /// this is called when the client recieves a string
+    /// </summary>
     public event EventHandler<string> receivedString;
     void recievedStringFunktion(string stringData) recievedAnyRawData(stringData);
 
+    /// <summary>
+    /// this is called when the client recieves a int
+    /// </summary>
     public event EventHandler<int> receivedInt;
     void recievedIntFunktion(int intData) recievedInt(intData);
 
+    /// <summary>
+    /// this is called when the client recieves a double
+    /// </summary>
     public event EventHandler<double> receivedDouble;
     void recievedDoubleFunktion(double doubleData) recievedDouble(doubleData);
 
@@ -92,6 +112,8 @@ public class mainNetworkHandler : MonoBehaviour
     void Start()
     {
         DeepNetworkManagerInstance.Main();
+
+
         DeepNetworkManagerInstance.recievedAnyRawData += recievedAnyRawDataFunktion;
         DeepNetworkManagerInstance.recievedAnyData += recievedAnyDataFunktion;
         DeepNetworkManagerInstance.recievedRandomData += recievedRandomDataFunktion;
