@@ -6,8 +6,6 @@ using System.Threading;
 
 public class deepNetworkManager
 {
-    public static deepNetworkManager DNW;
-
     IPAddress homeIPAddress;
     IPAddress mainServerIPAddress = IPAddress.Parse("138.201.94.174");
     IPAddress overrideIPAddress;
@@ -17,6 +15,8 @@ public class deepNetworkManager
     Thread receiveThread;
     bool isReceiving;
 
+    public event EventHandler<string> recievedAnyRawData;
+    public event EventHandler<object> recievedAnyData;
     public event EventHandler<object> receivedRandomData;
     public event EventHandler<string> receivedStringData;
     public event EventHandler<int> receivedIntData;

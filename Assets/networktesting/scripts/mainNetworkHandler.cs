@@ -15,15 +15,29 @@ public class mainNetworkHandler : MonoBehaviour
     List<object> structQueue = new List<object>();
 
     public event EventHandler<string> recievedAnyRawData;
+    void recievedAnyRawDataFunktion(string rawData) recievedAnyRawData(rawData);
+
 
     public event EventHandler<object> recievedAnyData;
+    void recievedAnyDataFunktion(object data) recievedAnyData(data);
+
 
     public event EventHandler<object> receivedRandomData;
+    void recievedRandomDataFunktion(object data) recievedRandomData(data);
+
     public event EventHandler<object> receivedRandomStruct;
+    void recievedRandomStructFunktion(object structData) recievedAnyRawData(structData);
+
 
     public event EventHandler<string> receivedString;
+    void recievedStringFunktion(string stringData) recievedAnyRawData(stringData);
+
     public event EventHandler<int> receivedInt;
+    void recievedIntFunktion(int intData) recievedInt(intData);
+
     public event EventHandler<double> receivedDouble;
+    void recievedDoubleFunktion(double doubleData) recievedDouble(doubleData);
+
 
     /// <summary>
     /// sends a string to the server
@@ -78,6 +92,14 @@ public class mainNetworkHandler : MonoBehaviour
     void Start()
     {
         DeepNetworkManagerInstance.Main();
+        DeepNetworkManagerInstance.recievedAnyRawData += recievedAnyRawDataFunktion;
+        DeepNetworkManagerInstance.recievedAnyData += recievedAnyDataFunktion;
+        DeepNetworkManagerInstance.recievedRandomData += recievedRandomDataFunktion;
+        DeepNetworkManagerInstance.recievedStringData += recievedStringFunktion;
+        DeepNetworkManagerInstance.recievedIntData += recievedIntFunktion;
+        DeepNetworkManagerInstance.recievedDoubleData += recievedDoubleFunktion;
+
+
     }
 
     void Update()
