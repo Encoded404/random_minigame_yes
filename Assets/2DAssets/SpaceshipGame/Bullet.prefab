@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1272226130594598525}
   - component: {fileID: 1332113275671542353}
   - component: {fileID: 2596151639986031387}
+  - component: {fileID: 8331537212125289495}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -33,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 8756789005618635422}
   - {fileID: 8590307296003809069}
+  - {fileID: 7556963992530975979}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,6 +137,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1609561, y: 3.513392}
   m_EdgeRadius: 0
+--- !u!114 &8331537212125289495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272226130594598524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb940d0ae6b35c14c9ae93a2a87fdf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 20
+--- !u!1 &3639602449185662688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7556963992530975979}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7556963992530975979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639602449185662688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.24633312, y: -0.1082294, z: 0.9269769}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1272226130594598526}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5564335702338288886
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +272,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1272226130594598526}
     m_Modifications:
+    - target: {fileID: 8604962258685985860, guid: 1c6be0e6c0785d8439cfc2c97ce44c62, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8474546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604962258685985860, guid: 1c6be0e6c0785d8439cfc2c97ce44c62, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8474546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604962258685985860, guid: 1c6be0e6c0785d8439cfc2c97ce44c62, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84705883
+      objectReference: {fileID: 0}
     - target: {fileID: 8604962258685985861, guid: 1c6be0e6c0785d8439cfc2c97ce44c62, type: 3}
       propertyPath: m_RootOrder
       value: 1
