@@ -17,15 +17,14 @@ public class deepNetworkManager
 
     public event EventHandler<string> recievedAnyRawData;
     public event EventHandler<object> recievedAnyData;
-    public event EventHandler<object> receivedRandomData;
-    public event EventHandler<string> receivedStringData;
-    public event EventHandler<int> receivedIntData;
-    public event EventHandler<double> receivedDoubleData;
+    public event EventHandler<object> recievedRandomData;
+    public event EventHandler<string> receivedString;
+    public event EventHandler<int> receivedInt;
+    public event EventHandler<double> receivedDouble;
     public event EventHandler<object> receivedRandomStructData;
 
     public void Awake()
     {
-        DNW = this;
     }
 
     void Startup()
