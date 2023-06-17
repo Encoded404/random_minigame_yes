@@ -100,4 +100,8 @@ public class TScript : MonoBehaviour
         }
         commands[command](arguments);
     }
+
+    public void playerChatMessage(string playerName, string message){
+        terminal.println(terminal.playername + " >> " + String.Join(" ", arguments));
+    }
 }
