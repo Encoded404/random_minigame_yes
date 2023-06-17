@@ -11,10 +11,13 @@ public class EscMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) { 
-   
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+
+            bool currentValue = animator.GetBool("isOpen");
+
+            animator.SetBool("isOpen", !currentValue);
             // Toggle the active state of the object
-            objectToToggle.SetActive(!objectToToggle.activeSelf);
+          //  objectToToggle.SetActive(!objectToToggle.activeSelf);
            
         }
     }
