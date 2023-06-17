@@ -11,6 +11,11 @@ public class Commands : MonoBehaviour
     void Start()
     {
         commands = terminal.commands;
+        
+        commands["help"] = (arguments) => {
+            terminal.println("For more information on a specific command, type HELP command-name\nls     see all files in current directory\necho   print to console\nsay    so something to the other players");
+        };
+        
         commands["ls"] = (arguments) => {
             terminal.println("Files\nOtherFiles\nFinalfiles");
         };
