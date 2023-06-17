@@ -15,48 +15,46 @@ public class mainNetworkHandler : MonoBehaviour
     List<object> structQueue = new List<object>();
 
     /// <summary>
-    /// this is called when the client recieves any data at all. all data is raw so no fancy things for you this time
+    /// Event triggered when any raw data is received by the client.
     /// </summary>
     public event EventHandler<string> recievedAnyRawData;
-    void recievedAnyRawDataFunktion(string rawData) recievedAnyRawData(rawData);
+    void recievedAnyRawDataFunktion(object sender, string rawData) { recievedAnyRawData?.Invoke(sender, rawData); }
 
     /// <summary>
-    /// this is called when it recieves a Object, Struct, Int, Double or String
+    /// Event triggered when any data (Object, Struct, Int, Double, or String) is received by the client.
     /// </summary>
     public event EventHandler<object> recievedAnyData;
-    void recievedAnyDataFunktion(object data) recievedAnyData(data);
-
+    void recievedAnyDataFunktion(object sender, object data) { recievedAnyData?.Invoke(sender, data); }
 
     /// <summary>
-    /// this is called when the client recieves data send by a SendAbstact() call
+    /// Event triggered when random data sent by a SendAbstract() call is received by the client.
     /// </summary>
     public event EventHandler<object> receivedRandomData;
-    void recievedRandomDataFunktion(object data) recievedRandomData(data);
+    void recievedRandomDataFunktion(object sender, object data) { receivedRandomData?.Invoke(sender, data); }
 
     /// <summary>
-    /// this is called when the client recieves data send by a SendAbstractStruct() call
+    /// Event triggered when random struct data sent by a SendAbstractStruct() call is received by the client.
     /// </summary>
     public event EventHandler<object> receivedRandomStruct;
-    void recievedRandomStructFunktion(object structData) recievedAnyRawData(structData);
-
+    void recievedRandomStructFunktion(object sender, object structData) { receivedRandomStruct?.Invoke(sender, structData); }
 
     /// <summary>
-    /// this is called when the client recieves a string
+    /// Event triggered when a string is received by the client.
     /// </summary>
     public event EventHandler<string> receivedString;
-    void recievedStringFunktion(string stringData) recievedAnyRawData(stringData);
+    void recievedStringFunktion(object sender, string stringData) { receivedString?.Invoke(sender, stringData); }
 
     /// <summary>
-    /// this is called when the client recieves a int
+    /// Event triggered when an int is received by the client.
     /// </summary>
     public event EventHandler<int> receivedInt;
-    void recievedIntFunktion(int intData) recievedInt(intData);
+    void recievedIntFunktion(object sender, int intData) { receivedInt?.Invoke(sender, intData); }
 
     /// <summary>
-    /// this is called when the client recieves a double
+    /// Event triggered when a double is received by the client.
     /// </summary>
     public event EventHandler<double> receivedDouble;
-    void recievedDoubleFunktion(double doubleData) recievedDouble(doubleData);
+    void recievedDoubleFunktion(object sender, double doubleData) { receivedDouble?.Invoke(sender, doubleData); }
 
 
     /// <summary>
@@ -117,9 +115,9 @@ public class mainNetworkHandler : MonoBehaviour
         DeepNetworkManagerInstance.recievedAnyRawData += recievedAnyRawDataFunktion;
         DeepNetworkManagerInstance.recievedAnyData += recievedAnyDataFunktion;
         DeepNetworkManagerInstance.recievedRandomData += recievedRandomDataFunktion;
-        DeepNetworkManagerInstance.recievedStringData += recievedStringFunktion;
-        DeepNetworkManagerInstance.recievedIntData += recievedIntFunktion;
-        DeepNetworkManagerInstance.recievedDoubleData += recievedDoubleFunktion;
+        DeepNetworkManagerInstance.receivedString += recievedStringFunktion;
+        DeepNetworkManagerInstance.receivedInt += recievedIntFunktion;
+        DeepNetworkManagerInstance.receivedDouble += recievedDoubleFunktion;
 
 
     }
