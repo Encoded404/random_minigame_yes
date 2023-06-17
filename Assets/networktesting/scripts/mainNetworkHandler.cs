@@ -8,11 +8,6 @@ public class mainNetworkHandler : MonoBehaviour
 {
     deepNetworkManager DeepNetworkManagerInstance = new deepNetworkManager();
 
-    List<string> stringQueue = new List<string>();
-    List<int> intQueue = new List<int>();
-    List<double> doubleQueue = new List<double>();
-    List<object> abstractQueue = new List<object>();
-    List<object> structQueue = new List<object>();
 
     /// <summary>
     /// Event triggered when any raw data is received by the client.
@@ -56,55 +51,114 @@ public class mainNetworkHandler : MonoBehaviour
     public event EventHandler<double> receivedDouble;
     void recievedDoubleFunktion(object sender, double doubleData) { receivedDouble?.Invoke(sender, doubleData); }
 
+    Dictionary<int,string> stringQueue = new Dictionary<int, string>();
 
     /// <summary>
     /// sends a string to the server
     /// </summary>
     /// <param name="data"></param>
-    public void sendString(string data)
+    public void sendString(int packetID, string data)
     {
-        stringQueue.Add(data);
+        if (stringQueue.ContainsKey(packetID))
+        {
+            stringQueue[packetID] = data;
+        }
+        else
+        {
+            stringQueue.Add(packetID, data);
+        }
     }
 
+    Dictionary<int,int> intQueue = new Dictionary<int, int>();
     /// <summary>
     /// sends a int to the server
     /// </summary>
     /// <param name="data"></param>
-    public void sendInt(int data)
+    public void sendInt(int packetID, int data)
     {
-        intQueue.Add(data);
+        if (intQueue.ContainsKey(packetID))
+        {
+            intQueue[packetID] = data;
+        }
+        else
+        {
+            intQueue.Add(packetID, data);
+        }
     }
 
+    Dictionary<int,double> doubleQueue = new Dictionary<int,double>();
     /// <summary>
     /// sends a double to the server. an implesit conversion exist from int and float to double so they can be inputed instead
     /// </summary>
     /// <param name="data"></param>
-    public void sendDouble(double data)
+    public void sendDouble(int packetID, double data)
     {
-        doubleQueue.Add(data);
+        if (doubleQueue.ContainsKey(packetID))
+        {
+            doubleQueue[packetID] = data;
+        }
+        else
+        {
+            doubleQueue.Add(packetID, data);
+        }
     }
 
+    Dictionary<int,object> abstractQueue = new Dictionary<int, object>();
     /// <summary>
-    /// sends a object to the server and directly to all clients. using the data you need to handle youself on this one. REMEMBER the data needs to be serelizable by newtonsoft.json
+    /// sends a object to the server and directly to all clients. it is sent raw so you need to handle the data yourself. REMEMBER the data needs to be serelizable by newtonsoft.json
     /// </summary>
     /// <param name="data"></param>
-    public void sendAbstract(object dataObject)
+    public void sendAbstract(int packetID, object dataObject)
     {
-        abstractQueue.Add(dataObject);
+        if (abstractQueue.ContainsKey(packetID))
+        {
+            abstractQueue[packetID] = dataObject;
+        }
+        else
+        {
+            abstractQueue.Add(packetID, dataObject);
+        }
     }
 
+    Dictionary<int,object> structQueue = new Dictionary<int, object>();
     /// <summary>
-    /// sends a struct to the server and directly to all clients. using the data you need to handle youself on this one. REMEMBER the data inside the struct needs to be serelizable by newtonsoft.json 
+    /// <if you are sending player data please use "sendPlayerData()"> sends a struct to the server and directly to all clients. it is sent raw so you need to handle the data yourself. REMEMBER the data inside the struct needs to be serelizable by newtonsoft.json 
     /// </summary>
     /// <param name="data"></param>
-    public void sendAbstractStruct(object dataStruct)
+    public void sendAbstractStruct(int packetID, object dataStruct)
     {
-        structQueue.Add(dataStruct);
+        if (structQueue.ContainsKey(packetID))
+        {
+            structQueue[packetID] = dataStruct;
+        }
+        else
+        {
+            structQueue.Add(packetID, dataStruct);
+        }
     }
 
-    public void sendAbstractPlayerStruct(object dataStruct)
+    Dictionary<int,object> playerDataQueue = new Dictionary<int,object>();
+    struct sendStruct
     {
-        structQueue.Add(dataStruct);
+            int playerID;
+            public object Object;
+    }
+    /// <summary>
+    /// sends a struct to the server and directly to all clients together with player ID. it is sent raw so you need to handle the data yourself. REMEMBER the data inside the struct needs to be serelizable by newtonsoft.json 
+    /// </summary>
+    /// <param name="data"></param>
+    public void sendPlayerData(int packetID, object dataStruct)
+    {
+        sendStruct ST = new sendStruct();
+        ST.Object = dataStruct;
+        if (doubleQueue.ContainsKey(packetID))
+        {
+            playerDataQueue[packetID] = ST;
+        }
+        else
+        {
+            playerDataQueue.Add(packetID, ST);
+        }
     }
 
     void Awake()
