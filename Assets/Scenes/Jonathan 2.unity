@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'user@localhost:$ '
+  m_text: user@localhost:$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4680a1ddf860055f1907d79c46c6020d, type: 2}
   m_sharedMaterial: {fileID: -5842344305936746760, guid: 4680a1ddf860055f1907d79c46c6020d, type: 2}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 2
   m_linkedTextComponent: {fileID: 0}
@@ -431,8 +431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.049988, y: 32.78}
-  m_SizeDelta: {x: -8.11, y: -65.54}
+  m_AnchoredPosition: {x: -2.1900024, y: 3.9899902}
+  m_SizeDelta: {x: -20.59, y: -7.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587274698
 MonoBehaviour:
@@ -886,7 +886,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 172, y: 0}
-  m_SizeDelta: {x: 615, y: 15}
+  m_SizeDelta: {x: 568.6, y: 15}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1832224734
 MonoBehaviour:
