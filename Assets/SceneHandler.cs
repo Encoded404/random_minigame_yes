@@ -16,7 +16,7 @@ public class SceneHandler : MonoBehaviour
 
     private void Awake()
     {
-        SceneManager.LoadScene("Terminal", LoadSceneMode.Additive);
+        SceneManager.LoadScene("SpaceInvadersMinigame", LoadSceneMode.Additive);
 
     }
     // Update is called once per frame
