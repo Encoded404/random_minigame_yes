@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
     {
 
         print("PlayerTookDamage");
+        anim.SetTrigger("Hit");
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
       //  soundEffectPlayer.Play();
 
