@@ -102,6 +102,11 @@ public class mainNetworkHandler : MonoBehaviour
         structQueue.Add(dataStruct);
     }
 
+    public void sendAbstractPlayerStruct(object dataStruct)
+    {
+        structQueue.Add(dataStruct);
+    }
+
     void Awake()
     {
         // Initialize any necessary components or variables
@@ -109,8 +114,8 @@ public class mainNetworkHandler : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         DeepNetworkManagerInstance.Main();
-
 
         DeepNetworkManagerInstance.recievedAnyRawData += recievedAnyRawDataFunktion;
         DeepNetworkManagerInstance.recievedAnyData += recievedAnyDataFunktion;
@@ -119,7 +124,7 @@ public class mainNetworkHandler : MonoBehaviour
         DeepNetworkManagerInstance.receivedInt += recievedIntFunktion;
         DeepNetworkManagerInstance.receivedDouble += recievedDoubleFunktion;
 
-
+        this.gameObject.GetComponent<deloadHelper>().RFD = true;
     }
 
     void Update()
