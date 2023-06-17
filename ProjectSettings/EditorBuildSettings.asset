@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mini games/SpaceInvaders/SpaceInvadersMinigame.unity
     guid: 6e3f8e267b8672e468fa214ae6dce52a
+  - enabled: 1
+    path: Assets/Scenes/Terminal.unity
+    guid: 72971613cefb19e4b939b13257c84a51
   m_configObjects: {}
