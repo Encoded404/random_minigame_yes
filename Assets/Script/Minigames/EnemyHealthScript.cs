@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealthScript : MonoBehaviour
 {
+
+    public bool friendly = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,22 @@ public class EnemyHealthScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        
+        print("EnTookDmg");
+        if (collision.gameObject.CompareTag("Bullet")&& !friendly) 
+        {
+            if (friendly)
+                ScoreManager.AddToRedTeamScore(1);
+            else
+                ScoreManager.AddToGreenTeamScore(1);
+            
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("EnemyBullet") && friendly)
+        {
+            ScoreManager.AddToRedTeamScore(1);
+            Destroy(gameObject);
+        }
+
     }
 }

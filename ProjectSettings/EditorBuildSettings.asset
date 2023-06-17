@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/mini games/SpaceInvaders/SpaceInvadersMenu.unity
+    guid: cabdd93692c31ae42bfbd9c2a9781fc0
+  - enabled: 1
+    path: Assets/Scenes/mini games/SpaceInvaders/SpaceInvadersMinigame.unity
+    guid: 6e3f8e267b8672e468fa214ae6dce52a
   m_configObjects: {}
