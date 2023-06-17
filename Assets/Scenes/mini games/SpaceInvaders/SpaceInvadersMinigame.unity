@@ -3261,6 +3261,7 @@ GameObject:
   - component: {fileID: 828180246}
   - component: {fileID: 828180245}
   - component: {fileID: 828180249}
+  - component: {fileID: 828180250}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3370,6 +3371,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1949875498}
+--- !u!95 &828180250
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828180244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c964dddcb8ca69e42b8fb794c65253e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &828589992
 GameObject:
   m_ObjectHideFlags: 0
