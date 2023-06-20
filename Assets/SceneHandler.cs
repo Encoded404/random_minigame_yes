@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+
+    public string AdditiveScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class SceneHandler : MonoBehaviour
 
     private void Awake()
     {
-        SceneManager.LoadScene("SpaceInvadersMinigame", LoadSceneMode.Additive);
+        SceneManager.LoadScene(AdditiveScene, LoadSceneMode.Additive);
 
     }
     // Update is called once per frame
