@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ed9f20e5f306f46ab36e5c547d2cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AdditiveScene: SpaceInvadersMinigame
 --- !u!4 &1057858024
 Transform:
   m_ObjectHideFlags: 0
