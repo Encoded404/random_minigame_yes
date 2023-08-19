@@ -3,13 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class loadNextScene : MonoBehaviour
+public class sceneInitializerScript : MonoBehaviour
 {
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     [SerializeField]
     private GameObject[] initializerGameObjects;
     [SerializeField]
     private Scene firstLoadScene;
+
+    int localSceneIndex = 1;
+
+    bool doTriggeredUpdate = true;
     void Update()
+    {
+        if(doTriggeredUpdate)
+        {
+            triggeredUpdate();
+        }
+    }
+    void triggeredUpdate()
     {
         bool doDeload = true;
         for(int i = 0; i < initializerGameObjects.Length -1; i++)
@@ -21,7 +37,13 @@ public class loadNextScene : MonoBehaviour
         }
         if(doDeload == true)
         {
-            SceneManager.LoadScene(this.gameObject.scene.buildIndex + 1);
+            SceneManager.LoadScene(sceneIndex);
+            doTriggeredUpdate = false;
         }
+    }
+    public void loadNewScene(int sceneIndex)
+    {
+        localSceneIndex=sceneIndex;
+        doTriggeredUpdate = true;
     }
 }
